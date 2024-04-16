@@ -1,6 +1,10 @@
 BACKEND SETUP STEPS:
 
-1. Set up VS Code to work with C# (already done)
+1. Set up C#/.NET project:
+- Create Project folder:  DatingApp
+- Need a solution file: dotnet new sln
+- ASP.NET Core Web API dotnet new webapi: dotnet new webapi -n API
+- Add API project to solution file:  dotnet sln add API/
 2. Create first Entity (Entities/AppUser.cs)
 3. Add EFC to our project (Nuget Package).
 4. Create a DbContext class. (Data/DataContext.cs)
@@ -11,6 +15,19 @@ BACKEND SETUP STEPS:
 9. Add a few users to the database, Right Click on Users Table in SQLite Explorer to INSERT.
 10. Create API Controller to Query an Endpoint (Controllers/UsersController.cs)
 11. Make the code asyncronous.
+
+FRONTEND SETUP STEPS:
+
+1. Install, or update Angular globally: npm install @angular/cli@16 
+2. To start the app cd into client directory: ng serve
+3. app.component.html, app.component.ts, corresponding css file
+4. Add extention Angular Language service
+5. Make HTTP request from our Angular client to the controller of our API
+6. Add Cors to the API, Program.cs... two lines of code
+7. Display in the browser
+8. Add styling
+
+
 
 WALKING SKELETON FOR BACKEND IS COMPLETE!!!
 

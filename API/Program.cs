@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//Add services to the container.
-//Services are things we want to be able to inject throughout our application.
+//Add services to the container. Services are things we want to be able to inject throughout our application.
 
 builder.Services.AddControllers();
+
 //AddDbContext is an Entity Framework Extention Method, pass options (opt), in curly braces add options
 builder.Services.AddDbContext<DataContext>(opt => 
 {
@@ -16,13 +16,13 @@ builder.Services.AddDbContext<DataContext>(opt =>
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
+//this tells our browser that this web service is OK and you can trust it, second part below
+builder.Services.AddCors();
+
 var app = builder.Build();
 
 //Configure the HTTP request pipeline.
-
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
+app.UseCors(corspolicybuilder => corspolicybuilder.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
 
 app.MapControllers();
 

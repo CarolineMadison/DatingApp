@@ -8,10 +8,10 @@ namespace API.Controllers;
 
 [ApiController]
 
-//takes the first part of the name of the controller "Users" an uses that as the route
-[Route("api/[controller]")] // api/users
 
-//derived from ControllerBase class, Base class for MVC controller (Model, View, Controller); In an API controller we don't return a view but an HTTP response
+[Route("api/[controller]")] // api/users, Angular client will hit this controller and endpoints
+
+//derived from ControllerBase class, Base class for MVC controller (Model, View, Controller); In an API contoller we don't return a view but an HTTP response
 public class UsersController : ControllerBase
 {
     //private readonly field gives the rest of the class (other methods) access to context
