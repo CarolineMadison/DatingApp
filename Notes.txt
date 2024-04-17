@@ -16,6 +16,8 @@ BACKEND SETUP STEPS:
 10. Create API Controller to Query an Endpoint (Controllers/UsersController.cs)
 11. Make the code asyncronous.
 
+WALKING SKELETON FOR BACKEND IS COMPLETE!!!!
+
 FRONTEND SETUP STEPS:
 
 1. Install, or update Angular globally: npm install @angular/cli@16 
@@ -23,13 +25,31 @@ FRONTEND SETUP STEPS:
 3. app.component.html, app.component.ts, corresponding css file
 4. Add extention Angular Language service
 5. Make HTTP request from our Angular client to the controller of our API
+- go to app.module.ts. We need to add HttpClientModule to NgModule Imports and import it from angular at the top
+- go to app.component.ts. Inject HttpClient in AppComponent class via a constructor placed beneath class properties. Add new property to assign data from API to.
 6. Add Cors to the API, Program.cs... two lines of code
 7. Display in the browser
-8. Add styling
+8. Add styling, install NGX-BOOTSTRAP (BOOTSTRAP FOR ANGULAR)
 
+WALKING SKELETON FOR FRONTEND IS COMPLETE!!!!
 
+TO RUN OVER HTTPS:
 
-WALKING SKELETON FOR BACKEND IS COMPLETE!!!
+1. Need to generate a certificate for our client side application in order to run over HTTPS
+2. Need to install utility, which creates a new local certificate authority on my computer: brew install mkcert
+3. In DatingApp/client mkdir ssl
+4. cd ssl
+5. Run command to install a root local certificate authority: mkcert -install 
+6. Run: mkcert localhost, which gives us a key file and a certificate file
+7. Make change to angular.json and add options to serve. 
+"serve": {
+          "options": {
+            "ssl": true,
+            "sslCert": "./ssl/localhost.pem",
+            "sslKey": "./ssl/localhost-key.pem"
+          },
+          ...}
+8. Make change to Cors Policy app.useCors(...) in Program.cs to take https, not http 
 
 
 
