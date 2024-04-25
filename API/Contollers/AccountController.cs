@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+using System.Text;
 using API.Data;
 using API.DTOs;
 using API.Entities;
@@ -22,8 +23,6 @@ public class AccountController : BaseApiController
 
         if (await UserExists(registerDTO.Username)) return BadRequest("Username is taken");
 
-    
-
         using var hmac = new HMACSHA512();
         var user = new AppUser
         {
@@ -37,12 +36,28 @@ public class AccountController : BaseApiController
 
         return user;
     }
-    //PRIVATE METHOD TO CHECK TO SEE IF USERNAME ALREADY EXISTS
+
+    [HttpPost("login")]
+    public async Task<ActionResult<AppUser>> Login(LoginDTO loginDTO)
+    {
+        //finding user logging in
+        var user = await _context.Users.FirstOrDefaultAsync(x => x.UserName == loginDTO.Username.ToLower());
+
+        if (user == null) return Unauthorized("invalid username");
+
+        //checking password
+        using var hmac = new HMACSHA512(user.PasswordSalt);
+        var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDTO.Password));
+
+        for (int i = 0; i < computedHash.Length; i++)
+        {
+            if (computedHash[i] != user.PasswordHash[i]) return Unauthorized("invalid password");
+        }
+        return user;
+    }
+
     private async Task<bool> UserExists(string username)
     {
         return await _context.Users.AnyAsync(x => x.UserName == username.ToLower());
     }
-
-    //PRIVATE METHOD TO CHECK IF NULL
-    
 }
