@@ -6,13 +6,7 @@ using Microsoft.EntityFrameworkCore;
 namespace API.Controllers;
 
 
-[ApiController]
-
-
-[Route("api/[controller]")] // api/users, Angular client will hit this controller and endpoints
-
-//derived from ControllerBase class, Base class for MVC controller (Model, View, Controller); In an API contoller we don't return a view but an HTTP response
-public class UsersController : ControllerBase
+public class UsersController : BaseApiController
 {
     //private readonly field gives the rest of the class (other methods) access to context
     private readonly DataContext _context;

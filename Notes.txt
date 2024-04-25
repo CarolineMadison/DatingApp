@@ -51,6 +51,11 @@ TO RUN OVER HTTPS:
           ...}
 8. Make change to Cors Policy app.useCors(...) in Program.cs to take https, not http 
 
+REGISTER A NEW User
+1. Create AccountController 
+2. Create RegisterDTO to bind it to the body of the request, RegisterDTO is the parameter for Register Method
+3. Check to see if username exists by creating a private Method
+4. Add Validations
 
 
 /////////////////////////////////////////////////////////////////////////
