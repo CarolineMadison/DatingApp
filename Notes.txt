@@ -58,9 +58,26 @@ REGISTER A NEW USER
 4. Add Validations
 
 LOGIN A USER
-1. Create login endpoint in AccountController with applied logic.
+1. Create login endpoint in AccountController with apxplied logic.
 
 AUTHENTICATION
+We make a request to the api, it returns data, and then we are finished, until we make another request
+JWT, JSON Web Token
+a long string separated into three parts seperated by a period
+Send up token with every request
+
+user logs in and gets a JWT, they keep ahold of it, and anytime they need to access a protected resource, they present the token in an authentication header, and the server is able to verify the token without checking the database.
+the username is inside the token that has been signed by the server
+
+implementation for token - (two new directories)
+1. Create a service to issue user with JWT
+- Create an Interface to tell service which methods it supports
+- Create the Service and that will implement the Interface
+- let Program.cs know about service
+- Go into TokenService and insert the logic to create a JSON token, which requires a nuget package... system.idenitymodel.tokens.jwt (nuget open nuget gallery), install into csproj file
+    - create a constructor to store our key in our configuration
+
+
 
 
 /////////////////////////////////////////////////////////////////////////

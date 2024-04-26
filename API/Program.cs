@@ -1,4 +1,6 @@
+using API.Services;
 using API.Data;
+using API.Interface;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 //Add services to the container. Services are things we want to be able to inject throughout our application.
 
 builder.Services.AddControllers();
+//provide interface and the interface needs its implementation class as well in angle brackets
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 //AddDbContext is an Entity Framework Extention Method, pass options (opt), in curly braces add options
 builder.Services.AddDbContext<DataContext>(opt => 
