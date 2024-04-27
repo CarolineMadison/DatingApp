@@ -82,9 +82,18 @@ implementation for token - (two new directories)
 - https://jwt.ms/ to decode token
 
 2. Add authentication middleware
-- put [Authorize] on endpoints where a token will be needed to authenticate
+- put [Authorize] on endpoints where a token will be needed to authenticate (DTO)
 - add Authentication service to Program.cs class, add authentication nuget package
-- 
+- add middleware to program.cs
+
+CLEAN UP CODE IN PROGRAM.CS
+1. CREATE A EXTENSIONS FOLDER AND A FILE TO HOLD PROGRAM.CS EXTENTIONS 
+- one for application services
+- one for identity services
+
+
+
+
 
 
 

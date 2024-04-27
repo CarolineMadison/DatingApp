@@ -1,3 +1,5 @@
+//this controller handles registration and login endpoints
+
 using System.Security.Cryptography;
 using System.Text;
 using API.Data;
