@@ -121,3 +121,8 @@
 /Users/carolinemadison/DatingApp/API/bin/Debug/net8.0/runtimes/win-x86/native/e_sqlite3.dll
 /Users/carolinemadison/DatingApp/API/obj/Debug/net8.0/API.csproj.AssemblyReference.cache
 /Users/carolinemadison/DatingApp/API/obj/Debug/net8.0/API.csproj.Up2Date
+/Users/carolinemadison/DatingApp/API/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/carolinemadison/DatingApp/API/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/carolinemadison/DatingApp/API/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/Users/carolinemadison/DatingApp/API/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/Users/carolinemadison/DatingApp/API/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
