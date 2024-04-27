@@ -81,6 +81,11 @@ implementation for token - (two new directories)
 - create configuration for "TokenKey" in TokenService.cs (appsettings.Development.json)
 - https://jwt.ms/ to decode token
 
+2. Add authentication middleware
+- put [Authorize] on endpoints where a token will be needed to authenticate
+- add Authentication service to Program.cs class, add authentication nuget package
+- 
+
 
 
 
