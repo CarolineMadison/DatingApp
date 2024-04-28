@@ -91,6 +91,18 @@ CLEAN UP CODE IN PROGRAM.CS
 - one for application services
 - one for identity services
 
+/////// CLIENT SIDE /////////
+1. CREATE components for login and register with angular cli
+- create navbar with bootstrap ng g c nav --skip-tests
+- add nav.component.html to app.component.html
+- add angular service to handle setting data from our login form to the api CREATE _services folder
+  generate with ng g s _services/account --skip-tests --dry-run
+
+/////// SERVER SIDE /////////
+1. Persist the login (storing data in local storage)
+- AccountServic
+
+
 
 
 
