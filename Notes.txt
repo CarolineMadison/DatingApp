@@ -100,7 +100,10 @@ CLEAN UP CODE IN PROGRAM.CS
 
 /////// SERVER SIDE /////////
 1. Persist the login (storing data in local storage)
-- AccountServic
+- AccountService
+
+////// Client Side /////////
+1. Create Home Component
 
 
 
