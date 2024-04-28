@@ -8,6 +8,7 @@ import { NavComponent } from './nav/nav.component';
 import { FormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
 
 // This is responsible for loading the angluar application
 //EACH ANGULAR APPLICATION NEEDS AT LEAST ONE MODULE
@@ -15,7 +16,8 @@ import { HomeComponent } from './home/home.component';
   declarations: [
     AppComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

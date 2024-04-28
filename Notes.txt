@@ -104,6 +104,7 @@ CLEAN UP CODE IN PROGRAM.CS
 
 ////// Client Side /////////
 1. Create Home Component
+2. Create Register Component 
 
 
 
